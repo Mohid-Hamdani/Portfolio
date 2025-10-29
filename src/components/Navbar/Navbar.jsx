@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Navbar.module.css";
+import TextComponent from "../textComponent/TextComponent";
 
 const Navbar = () => {
   const [activeNav, setActiveNav] = useState("#home");
@@ -42,11 +43,12 @@ const Navbar = () => {
             key={item.id}
             href={item.key}
             onClick={() => setActiveNav(item?.key)}
-            className={`${styles.navItem} ${
-              activeNav === item.key ? styles.active : ""
-            }`}
+          style={{textDecoration: "none"}}
           >
-            {item.name}
+            <TextComponent text={item?.name} 
+              className={`${styles.navItem} ${
+              activeNav === item.key ? styles.active : styles.navText
+            }`}/>
           </a>
         ))}
       </span>

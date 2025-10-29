@@ -1,0 +1,84 @@
+.mainCont {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to right, #0f172a 20%, #1e1b4b 80%);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.subCont {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.textCont {
+  width: 59%;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: fadeInLeft 1.5s ease forwards;
+  /* display: flex;
+  flex-direction: column; */
+}
+.imageCont {
+  width: 39%;
+  display: flex;
+  justify-content: center;
+}
+.fadeText {
+  font-size: var(--heading-font-size);
+  font-family: "Poppins-bold";
+}
+.imageCont img {
+  width: 200px;
+  height: 200px;
+  border-radius: 100px;
+  border: 3px solid var(--secondary-color);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+  animation: morph 6s ease-in-out infinite;
+  object-fit: cover;
+}
+.waveHand {
+    display: inline-block;
+  font-size: var(--heading-font-size);
+  transform-origin: 70% 70%;
+  animation: waveSide 1.5s ease-in-out infinite;
+}
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes morph {
+  0% {
+    border-radius: 50% 40% 40% 40% / 50% 50% 50% 50%;
+  }
+  25% {
+    border-radius: 55% 45% 60% 40% / 60% 40% 55% 45%;
+  }
+  50% {
+    border-radius: 45% 55% 40% 60% / 50% 60% 40% 50%;
+  }
+  75% {
+    border-radius: 60% 40% 50% 50% / 55% 45% 60% 40%;
+  }
+  100% {
+    border-radius: 45% 45% 45% 45 / 45% 45% 45% 45%;
+  }
+}
+@keyframes waveSide {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60%, 100% { transform: rotate(0deg); }
+}

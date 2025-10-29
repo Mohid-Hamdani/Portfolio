@@ -1,9 +1,6 @@
 
  .mainCont{
-    height: 100vh;
     width: 100%;
-    background: linear-gradient(to right, #0f172a 0%, #1e1b4b 100%);
-    margin: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,10 +20,28 @@
 
 .navItem {
   color: #bbb;
-  text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease;
   gap: 10;
+
+}
+.navText{
+  opacity: 0.5;
+  margin: 0px 10px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+}
+.active{
+  margin: 0px 10px;
+  color: var(--secondary-color);
+  opacity: 1;
+  text-decoration: none;
+}
+.navText:hover{
+  opacity: 1;
+  text-decoration: none;
+  text-shadow: 0 0 10px #FFD43B, 0 0 20px #FFD43B, 0 0 30px #FFD43B;  
 
 }
 
