@@ -9,5 +9,6 @@
   /* mix-blend-mode: difference; */
   transform: translate(-50%, -50%);
   z-index: 9999;
-  box-shadow: 0 0 10px #FFD43B, 0 0 20px #FFD43B, 0 0 30px #FFD43B; 
+  box-shadow: var(--navText-shadow); 
+  
 }

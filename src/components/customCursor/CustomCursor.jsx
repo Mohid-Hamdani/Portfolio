@@ -5,7 +5,7 @@ import { CursorContext } from "../../config/CursorContext";
 
 const CustomCursor = () => {
   const { position, variant, cursorVariants } = useContext(CursorContext);
-console.log("//////////", position);
+// console.log("//////////", position);
 
   return (
     <motion.div

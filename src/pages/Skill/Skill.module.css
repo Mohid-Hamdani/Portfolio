@@ -1,0 +1,53 @@
+
+.mainCont {
+  background-color: var(--sub-secondary-color);
+  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  color: var(--text-color);
+  font-size: var(--heading1-font-size);
+  font-family: "Poppins-bold";
+  margin-bottom: 30px;
+}
+
+.scrollContainer {
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+  position: relative;
+}
+
+.scrollContent {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.skillItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 120px;
+  text-align: center;
+}
+
+.skillItem img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.skillItem img:hover {
+  transform: scale(1.2);
+}
+
+.skillItem p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: var(--text-color);
+}

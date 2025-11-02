@@ -5,7 +5,7 @@ export const CursorContext = createContext();
 export const CursorProvider = ({ children }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [variant, setVariant] = useState("default"); // "default", "hover"
-        console.log("position", position);
+        // console.log("position", position);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -24,11 +24,11 @@ export const CursorProvider = ({ children }) => {
 
   const cursorVariants = {
     default: {
-      backgroundColor: "#FFD43B",
+      backgroundColor: "var(--secondary-color)",
       scale: 1,
     },
     hover: {
-      backgroundColor: "#FFC107",
+      backgroundColor: "var(--secondary-color)",
       scale: 2,
     },
   };

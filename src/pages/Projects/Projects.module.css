@@ -1,0 +1,53 @@
+.mainCont {
+  background-color: var(--sub-secondary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.heading {
+  color: var(--text-color);
+  font-size: var(--heading1-font-size);
+  font-family: "Poppins-bold";
+}
+
+.projectListDiv {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+/* .projectList {
+  width: 100%;
+  display: grid !important;       
+  justify-content: center;       
+} */
+
+/* .listItem {
+  display: flex !important;
+  justify-content: center;
+} */
+
+/* .listItem > div {
+  width: 90%;
+  width: 400px;              
+  flex: 1;
+} */
+ .listItem{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+ /* .motionCard {
+  width: 100%;
+  max-width: 400px;
+}
+
+@media (max-width: 768px) {
+  .motionCard {
+    max-width: 100%;
+  }
+} */
