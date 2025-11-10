@@ -29,7 +29,7 @@ const Skill = () => {
         >
           {[...skills, ...skills].map((skill, i) => (
             <div key={i} className={styles.skillItem}>
-              <img src={skill.icon} alt={skill.name} />
+              <img src={skill.icon} />
               <p>{skill.name}</p>
             </div>
           ))}

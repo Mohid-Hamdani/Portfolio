@@ -1,10 +1,12 @@
 
 .mainCont {
   background-color: var(--sub-secondary-color);
-  padding: 60px 0;
+  /* padding: 60px 0; */
+  /* background-color: aqua; */
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 
 .heading {
@@ -16,8 +18,8 @@
 
 .scrollContainer {
   overflow: hidden;
-  width: 100%;
-  max-width: 1200px;
+  width: 80%;
+  /* max-width: 1400px; */
   position: relative;
 }
 

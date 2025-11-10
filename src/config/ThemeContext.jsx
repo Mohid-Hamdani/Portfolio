@@ -16,6 +16,7 @@ export const ThemeProvider = ({ children }) => {
 
       "--bg-color": "#0f172a",
       "--text-color": "#ffffff",
+      "--card-color": "linear-gradient(145deg, #1f1f1f, #2a2a2a)",
     },
     light: {
       "--primary-color": "linear-gradient(to right, #ffffff 20%, #e0e7ff 80%)",
@@ -26,6 +27,8 @@ export const ThemeProvider = ({ children }) => {
       "--navText-shadow": "0 0 5px #1e1b4b, 0 0 10px #1e1b4b, 0 0 15px #1e1b4b",
       "--bg-color": "#ffffff",
       "--text-color": "#000000",
+      "--card-color": "linear-gradient(145deg, #808080ff, #2a2a2a)",
+
     },
   };
 

@@ -1,7 +1,7 @@
 .card {
   width: 100%;
   height: 400px;
-  background: linear-gradient(145deg, #1f1f1f, #2a2a2a);
+  background: var(--card-color);
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
   overflow: hidden;
@@ -29,7 +29,8 @@
 
 .content {
   padding: 20px;
-  color: #fff;
+  color: var(--text-color);
+  font-family: "Poppins-bold";
 }
 
 .content h3 {
@@ -39,7 +40,8 @@
 
 .content p {
   font-size: 0.95rem;
-  color: #cfcfcf;
+  color: var(--text-color);
+  font-family: "Poppins-regular";
   margin-bottom: 20px;
   line-height: 1.4;
 }
@@ -53,11 +55,12 @@
   flex: 1;
   text-align: center;
   padding: 10px 0;
-  background: #4f46e5;
-  color: white;
+  background: var(--primary-color);
+  color: var(--text-color);
   border-radius: 10px;
   text-decoration: none;
   transition: background 0.3s ease, transform 0.3s ease;
+  font-family: "Poppins-medium";
 }
 
 .buttons a:hover {
