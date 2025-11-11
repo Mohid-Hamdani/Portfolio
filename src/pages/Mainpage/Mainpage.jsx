@@ -6,7 +6,7 @@ import Skill from "../Skill/Skill";
 import Experience from "../experience/Experience";
 import Footer from "../footer/Footer";
 
-const MainPage = () => {
+const Mainpage = () => {
  
   return (
     <div style={{ margin: 0 }}>
@@ -28,4 +28,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default Mainpage;
