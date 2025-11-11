@@ -52,7 +52,7 @@ body {
   --primary-color: linear-gradient(to right, #0f172a 20%, #1e1b4b 80%);
   --secondary-color: #FFD43B;
   --sub-secondary-color: #747070;
-  --navText-color: #C7B8B8;
+  --navText-color: #000000;
   --navText-shadow: 0 0 10px #ffd43b, 0 0 20px #ffd43b, 0 0 30px #ffd43b;
   --card-color: linear-gradient(145deg, #1f1f1f, #2a2a2a);
   --conic-border: conic-gradient(

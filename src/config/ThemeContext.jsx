@@ -10,7 +10,7 @@ export const ThemeProvider = ({ children }) => {
       "--secondary-color": "#FFD43B",
       "--sub-secondary-color": "#747070",
 
-      "--navText-color": "#C7B8B8",
+      // "--navText-color": "#C7B8B8",
       "--navText-shadow":
         "0 0 10px #ffd43b, 0 0 20px #ffd43b, 0 0 30px #ffd43b",
 
@@ -23,7 +23,7 @@ export const ThemeProvider = ({ children }) => {
       "--secondary-color": "#4B0082",
       "--sub-secondary-color": "#e9e7e7ff",
 
-      "--navText-color": "#000000",
+      // "--navText-color": "#000000",
       "--navText-shadow": "0 0 5px #1e1b4b, 0 0 10px #1e1b4b, 0 0 15px #1e1b4b",
       "--bg-color": "#ffffff",
       "--text-color": "#000000",
