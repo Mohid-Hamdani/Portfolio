@@ -1,53 +1,76 @@
 .mainCont {
+  min-height: 100vh;
   background-color: var(--sub-secondary-color);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 0;
+  padding: 60px 20px;
 }
 
 .heading {
   color: var(--text-color);
   font-size: var(--heading1-font-size);
   font-family: "Poppins-bold";
+  margin-bottom: 10px;
 }
 
-.projectListDiv {
-  width: 80%;
+.subheading {
+  color: var(--text-color);
+  font-size: 1.1rem;
+  font-family: "Poppins-regular";
+  opacity: 0.7;
+  margin-bottom: 50px;
+  text-align: center;
+  max-width: 600px;
+}
+
+.projectGrid {
+  width: 100%;
+  max-width: 1400px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  padding: 0 20px;
+  justify-items: center;
+}
+
+.cardWrapper {
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin: 20px 0;
 }
 
-/* .projectList {
-  width: 100%;
-  display: grid !important;       
-  justify-content: center;       
-} */
-
-/* .listItem {
-  display: flex !important;
-  justify-content: center;
-} */
-
-/* .listItem > div {
-  width: 90%;
-  width: 400px;              
-  flex: 1;
-} */
- .listItem{
-    display: flex;
-    align-items: center;
-    justify-content: center;
- }
- /* .motionCard {
-  width: 100%;
-  max-width: 400px;
-}
-
-@media (max-width: 768px) {
-  .motionCard {
-    max-width: 100%;
+@media screen and (max-width: 768px) {
+  .mainCont {
+    padding: 40px 15px;
   }
-} */
+
+  .heading {
+    font-size: 2rem;
+  }
+
+  .subheading {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    padding: 0 10px;
+  }
+
+  .projectGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 0 10px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .projectGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .projectGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

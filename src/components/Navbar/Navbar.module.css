@@ -6,6 +6,7 @@
   justify-content: center;
   z-index: 1000;
 }
+
 .navDiv {
   position: fixed;
   width: auto;
@@ -19,36 +20,141 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  gap: 1rem;
+  z-index: 9999;
+}
+
+.desktopNav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+}
+
+.hamburger {
+  display: none;
 }
 
 .navItem {
-  color: var(--navText-color);
-  /* color: #bbb; */
+  /* color: var(--navText-color); */
   font-weight: 500;
   transition: color 0.3s ease;
-  gap: 10;
 }
+
 .navText {
   color: var(--navText-color);
-
   opacity: 0.5;
   margin: 0px 10px;
   text-decoration: none;
   transition: all 0.3s ease;
 }
+
 .active {
   margin: 0px 10px;
   color: var(--secondary-color);
   opacity: 1;
   text-decoration: none;
 }
+
 .navText:hover {
   opacity: 1;
   text-decoration: none;
   text-shadow: var(--navText-shadow);
 }
 
-/* .active {
-  color: #00bfff;
-  border-bottom: 2px solid #00bfff;
-} */
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -350px;
+  width: 280px;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2rem 1.5rem;
+  z-index: 10000;
+  transition: right 0.3s ease-in-out;
+  display: none;
+}
+
+.sidebarOpen {
+  right: 0;
+}
+
+.sidebarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+.sidebarNav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sidebarNav .navText,
+.sidebarNav .active {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.sidebarFooter {
+  position: absolute;
+  bottom: 2rem;
+  left: 1.5rem;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  display: none;
+}
+
+/* Mobile responsive styles */
+@media screen and (max-width: 768px) {
+  .desktopNav {
+    display: none;
+  }
+
+  .themeToggle {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .overlay {
+    display: block;
+  }
+
+  .navDiv {
+    padding: 0.8rem 1rem;
+    gap: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sidebar {
+    width: 250px;
+    right: -200px;
+  }
+}

@@ -3,6 +3,8 @@ import { Navbar } from "../../components";
 import Home from "../home/Home";
 import Projects from "../Projects/Projects";
 import Skill from "../Skill/Skill";
+import Experience from "../experience/Experience";
+import Footer from "../footer/Footer";
 
 const MainPage = () => {
  
@@ -18,6 +20,10 @@ const MainPage = () => {
       <section id="skills">
         <Skill />
       </section>
+      <section id="experience">
+        <Experience />
+      </section>
+      <Footer/>
     </div>
   );
 };

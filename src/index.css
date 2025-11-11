@@ -54,7 +54,13 @@ body {
   --sub-secondary-color: #747070;
   --navText-color: #C7B8B8;
   --navText-shadow: 0 0 10px #ffd43b, 0 0 20px #ffd43b, 0 0 30px #ffd43b;
-  --card-color: linear-gradient(145deg, #1f1f1f, #2a2a2a)
+  --card-color: linear-gradient(145deg, #1f1f1f, #2a2a2a);
+  --conic-border: conic-gradient(
+    from 0deg,
+    #ffd43b,
+    #ffffff,
+    #ffd43b
+  );
   /* --navTextActive-color: ""; */
 
   --light-blue: #E5EDF6;

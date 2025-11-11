@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import TextComponent from "../textComponent/TextComponent";
 import styles from "./card.module.css";
 
 const Card = ({ title, description, image, demoLink, githubLink }) => {
@@ -32,11 +33,15 @@ const Card = ({ title, description, image, demoLink, githubLink }) => {
         <img src={image} alt={title} className={styles.image} />
       </div>
       <div className={styles.content}>
-        <h3>{title}</h3>
-        <p>{description}</p>
+        <TextComponent text={title} className={styles.title} />
+        <TextComponent text={description} className={styles.description} />
         <div className={styles.buttons}>
-          <a href={demoLink} target="_blank" rel="noreferrer">Live Demo</a>
-          <a href={githubLink} target="_blank" rel="noreferrer">GitHub</a>
+          <a href={demoLink} target="_blank" rel="noreferrer">
+            <TextComponent text="Live Demo" className={styles.buttonText} />
+          </a>
+          <a href={githubLink} target="_blank" rel="noreferrer">
+            <TextComponent text="GitHub" className={styles.buttonText} />
+          </a>
         </div>
       </div>
     </div>

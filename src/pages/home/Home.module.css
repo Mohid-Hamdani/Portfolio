@@ -22,16 +22,16 @@
   /* display: flex;
   flex-direction: column; */
 }
-.imageCont {
+/* .imageCont {
   width: 39%;
   display: flex;
   justify-content: center;
-}
+} */
 .fadeText {
   font-size: var(--heading-font-size);
   font-family: "Poppins-bold";
 }
-.imageCont img {
+/* .imageCont img {
   width: 200px;
   height: 200px;
   border-radius: 100px;
@@ -39,6 +39,48 @@
   box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
   animation: morph 6s ease-in-out infinite;
   object-fit: cover;
+} */
+ .imageCont {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageCont::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 5px; /* border thickness */
+  background: var(--conic-border);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  animation: spin 3s linear infinite;
+  box-shadow: 0 0 25px #ff00ff, 0 0 45px #00ffff
+}
+
+.imageCont img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* rotation animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 .waveHand {
     display: inline-block;
@@ -56,7 +98,7 @@
     transform: translateX(0px);
   }
 }
-@keyframes morph {
+/* @keyframes morph {
   0% {
     border-radius: 50% 40% 40% 40% / 50% 50% 50% 50%;
   }
@@ -72,7 +114,7 @@
   100% {
     border-radius: 50% 50% 50% 50 / 50% 50% 50% 50%;
   }
-}
+} */
 @keyframes waveSide {
   0% { transform: rotate(0deg); }
   10% { transform: rotate(14deg); }
@@ -81,4 +123,17 @@
   40% { transform: rotate(-4deg); }
   50% { transform: rotate(10deg); }
   60%, 100% { transform: rotate(0deg); }
+}
+@media screen and (max-width: 768px) {
+  .subCont {
+  width: 80%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+.textCont {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}
+  
 }
