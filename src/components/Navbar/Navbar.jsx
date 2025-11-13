@@ -7,7 +7,8 @@ import { IoMoonOutline } from "react-icons/io5";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { IoClose } from "react-icons/io5";
 import { ThemeContext } from "../../config/ThemeContext";
-
+import deskLogo from '../../assets/images/deskLogo.png';
+import mobLogo from '../../assets/images/mobLogo.png';
 const Navbar = () => {
   const { setId, scrollToSection } = useContext(ScrollContext);
   const [activeNav, setActiveNav] = useState("#home");
@@ -31,12 +32,12 @@ const Navbar = () => {
   // Prevent body scroll when sidebar is open
   React.useEffect(() => {
     if (isSidebarOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [isSidebarOpen]);
 
@@ -44,10 +45,13 @@ const Navbar = () => {
     <>
       <div className={styles.mainCont}>
         <span className={styles.navDiv}>
-          <TextComponent
+          <div className={styles.logo}>
+              <img src={deskLogo}/>
+          </div>
+          {/* <TextComponent
             text={"<Mohid Hamdani/>"}
             style={{ color: "var(--navText-color)" }}
-          />
+          /> */}
           <div className={styles.desktopNav}>
             {navItems.map((item) => (
               <a
@@ -73,13 +77,13 @@ const Navbar = () => {
               <LuCloudSun
                 style={{ color: "var(--navText-color)", cursor: "pointer" }}
                 size={20}
-                onClick={() => setTheme("light")}
+                onClick={() => {setTheme("light"); setIsSidebarOpen(false)}}
               />
             ) : (
               <IoMoonOutline
                 style={{ color: "var(--navText-color)", cursor: "pointer" }}
                 size={20}
-                onClick={() => setTheme("dark")}
+                onClick={() => {setTheme("dark"); setIsSidebarOpen(false);}}
               />
             )}
           </div>
@@ -99,10 +103,24 @@ const Navbar = () => {
         }`}
       >
         <div className={styles.sidebarHeader}>
-          <TextComponent
-            text={"<Mohid Hamdani/>"}
-            style={{ color: "var(--navText-color)" }}
-          />
+            <div className={styles.logo}>
+              <img src={mobLogo}/>
+          </div>
+          <div className={styles.sidebarFooter}>
+            {theme === "dark" ? (
+              <LuCloudSun
+                style={{ color: "var(--navText-color)", cursor: "pointer" }}
+                size={20}
+                onClick={() => setTheme("light")}
+              />
+            ) : (
+              <IoMoonOutline
+                style={{ color: "var(--navText-color)", cursor: "pointer" }}
+                size={20}
+                onClick={() => setTheme("dark")}
+              />
+            )}
+          </div>
           <IoClose
             size={28}
             onClick={() => setIsSidebarOpen(false)}
@@ -128,23 +146,7 @@ const Navbar = () => {
               />
             </a>
           ))}
-               <div className={styles.sidebarFooter}>
-          {theme === "dark" ? (
-            <LuCloudSun
-              style={{ color: "var(--navText-color)", cursor: "pointer" }}
-              size={20}
-              onClick={() => setTheme("light")}
-            />
-          ) : (
-            <IoMoonOutline
-              style={{ color: "var(--navText-color)", cursor: "pointer" }}
-              size={20}
-              onClick={() => setTheme("dark")}
-            />
-          )}
         </div>
-        </div>
-   
       </div>
 
       {/* Overlay */}
