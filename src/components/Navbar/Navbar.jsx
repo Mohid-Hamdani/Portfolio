@@ -46,7 +46,7 @@ const Navbar = () => {
         <span className={styles.navDiv}>
           <TextComponent
             text={"<Mohid Hamdani/>"}
-            style={{ color: "var(--navText-color)" }}
+            style={{ color: "var(--text-color)" }}
           />
           <div className={styles.desktopNav}>
             {navItems.map((item) => (
@@ -71,13 +71,13 @@ const Navbar = () => {
           <div className={styles.themeToggle}>
             {theme === "dark" ? (
               <LuCloudSun
-                style={{ color: "var(--navText-color)", cursor: "pointer" }}
+                style={{ color: "var(--text-color)", cursor: "pointer" }}
                 size={20}
                 onClick={() => setTheme("light")}
               />
             ) : (
               <IoMoonOutline
-                style={{ color: "var(--navText-color)", cursor: "pointer" }}
+                style={{ color: "var(--text-color)", cursor: "pointer" }}
                 size={20}
                 onClick={() => setTheme("dark")}
               />
@@ -87,7 +87,7 @@ const Navbar = () => {
             className={styles.hamburger}
             size={24}
             onClick={() => setIsSidebarOpen(true)}
-            style={{ color: "var(--navText-color)", cursor: "pointer" }}
+            style={{ color: "var(--text-color)", cursor: "pointer" }}
           />
         </span>
       </div>
@@ -101,12 +101,12 @@ const Navbar = () => {
         <div className={styles.sidebarHeader}>
           <TextComponent
             text={"<Mohid Hamdani/>"}
-            style={{ color: "var(--navText-color)" }}
+            style={{ color: "var(--text-color)" }}
           />
           <IoClose
             size={28}
             onClick={() => setIsSidebarOpen(false)}
-            style={{ color: "var(--navText-color)", cursor: "pointer" }}
+            style={{ color: "var(--text-color)", cursor: "pointer" }}
           />
         </div>
         <div className={styles.sidebarNav}>
@@ -131,13 +131,13 @@ const Navbar = () => {
                <div className={styles.sidebarFooter}>
           {theme === "dark" ? (
             <LuCloudSun
-              style={{ color: "var(--navText-color)", cursor: "pointer" }}
+              style={{ color: "var(--text-color)", cursor: "pointer" }}
               size={20}
               onClick={() => setTheme("light")}
             />
           ) : (
             <IoMoonOutline
-              style={{ color: "var(--navText-color)", cursor: "pointer" }}
+              style={{ color: "var(--text-color)", cursor: "pointer" }}
               size={20}
               onClick={() => setTheme("dark")}
             />

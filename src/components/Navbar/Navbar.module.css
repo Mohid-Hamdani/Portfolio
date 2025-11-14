@@ -41,13 +41,13 @@
 
 .navItem {
   
-  color: var(--navText-color);
+  color: var(--text-color);
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .navText {
-  color: var(--navText-color);
+  color: var(--text-color);
   opacity: 0.5;
   margin: 0px 10px;
   text-decoration: none;
