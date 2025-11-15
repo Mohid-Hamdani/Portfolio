@@ -16,6 +16,7 @@
 
 .contentWrapper {
   width: 80%;
+  /* background-color: aqua; */
   max-width: 1400px;
   display: flex;
   align-items: center;
@@ -112,6 +113,8 @@
   padding: 20px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
 .cardContent:hover {
@@ -123,14 +126,14 @@
 
 .position {
   color: var(--secondary-color);
-  font-size: 1.4rem;
+  font-size: var(--heading2-font-size);
   font-family: "Poppins-bold";
-  margin-bottom: 8px;
+  margin-bottom: 0px;
 }
 
 .company {
   color: var(--text-color);
-  font-size: 1.1rem;
+  font-size: var(--dashboard_tabs-font-size);
   font-family: "Poppins-semibold";
   margin-bottom: 6px;
   opacity: 0.9;
@@ -138,7 +141,7 @@
 
 .duration {
   color: var(--text-color);
-  font-size: 0.9rem;
+  font-size: var(--mobile-heading);
   opacity: 0.6;
   margin-bottom: 12px;
 }

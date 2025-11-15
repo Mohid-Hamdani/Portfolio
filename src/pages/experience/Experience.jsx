@@ -7,28 +7,66 @@ const Experience = () => {
   const experiences = [
     {
       id: 1,
-      position: "Senior React Developer",
-      company: "Tech Solutions Inc.",
-      duration: "2023 - Present",
-      description:
-        "Leading development of scalable React applications with Redux and TypeScript. Mentoring junior developers and conducting code reviews.",
+      position: "React & React Native Developer (Mid-Level)",
+      company: "Appicoders Inc. ",
+      duration: "April 2022 - Nov 2025",
+      desc: [
+        {
+          id: 1,
+          points:
+            "Built 5+ production web and mobile apps with React.js and React Native.",
+        },
+        {
+          id: 2,
+          points:
+            "Reduced development time by 40% through cross-platform architecture and code reusability.",
+        },
+        {
+          id: 3,
+          points:
+            "Implemented Redux for state management and scalable application architecture.",
+        },
+        {
+          id: 4,
+          points:
+            "Created pixel-perfect UIs with Ant Design and Material UI in collaboration with designers.",
+        },
+        {
+          id: 5,
+          points:
+            "Mentored junior developers and participated in Agile development sprints.",
+        },
+      ],
     },
     {
       id: 2,
-      position: "React Native Developer",
-      company: "Mobile Apps Co.",
-      duration: "2021 - 2023",
-      description:
-        "Built cross-platform mobile applications using React Native. Integrated third-party APIs and implemented push notifications.",
+      position: "React Js Developer (Internee)",
+      company: "Coderatory ",
+      duration: "Sep 2021 - April 2022",
+     desc: [
+        {
+          id: 1,
+          points:
+            "Built responsive designs ensuring seamless UX across desktop.",
+        },
+        {
+          id: 2,
+          points:
+            "Contributed to multiple front-end projects under senior developer guidance.",
+        },
+        {
+          id: 3,
+          points:
+            "Implemented reusable React components and state management using Redux.",
+        },
+        {
+          id: 4,
+          points:
+            "Improved performance by optimizing render cycles and API data handling.s",
+        },
+      ],
     },
-    {
-      id: 3,
-      position: "Frontend Developer",
-      company: "Digital Agency",
-      duration: "2020 - 2021",
-      description:
-        "Developed responsive web applications using React.js. Collaborated with designers to implement pixel-perfect UI components.",
-    },
+    
   ];
 
   const containerVariants = {
@@ -102,27 +140,33 @@ const Experience = () => {
               <div className={styles.cardHeader}>
                 <div className={styles.timeline}>
                   <div className={styles.dot}></div>
-                  {index !== experiences.length - 1 && (
                     <div className={styles.line}></div>
-                  )}
+
+                  {/* {index !== experiences.length - 1 && (
+                  )} */}
                 </div>
                 <div className={styles.cardContent}>
                   <TextComponent
                     text={exp.position}
                     className={styles.position}
                   />
-                  <TextComponent
-                    text={exp.company}
-                    className={styles.company}
-                  />
-                  <TextComponent
-                    text={exp.duration}
-                    className={styles.duration}
-                  />
-                  <TextComponent
+                  <TextComponent text={exp.company} className={styles.company}>
+                    <TextComponent
+                      text={exp.duration}
+                      className={styles.duration}
+                    />
+                  </TextComponent>
+                  {exp?.desc?.map((des, i) => (
+                    <TextComponent
+                      key={i}
+                      text={`\u2022 ${des?.points}`}
+                      className={styles.description}
+                    />
+                  ))}
+                  {/* <TextComponent
                     text={exp.description}
                     className={styles.description}
-                  />
+                  /> */}
                 </div>
               </div>
             </motion.div>

@@ -165,6 +165,11 @@
   bottom: 15%;
   left: 10%;
 }
+.iconImage{
+    width: 50px;     /* adjust size */
+  height: 50px;
+  object-fit: contain;
+}
 
 @keyframes shimmer {
   0% {

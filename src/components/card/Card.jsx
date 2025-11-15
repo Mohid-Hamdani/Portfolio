@@ -1,8 +1,12 @@
 import React, { useRef } from "react";
 import TextComponent from "../textComponent/TextComponent";
 import styles from "./card.module.css";
+import { FaAndroid, FaApple, FaExternalLinkAlt } from "react-icons/fa";
 
-const Card = ({ title, description, image, demoLink, githubLink }) => {
+const Card = ({ title, category, img, androidLink, webLink, iosLink }) => {
+  const openInNewTab = (url) => {
+    window.open(url, "_blank", "noreferrer");
+  };
   const cardRef = useRef(null);
 
   const handleMouseMove = (e) => {
@@ -30,19 +34,45 @@ const Card = ({ title, description, image, demoLink, githubLink }) => {
       onMouseLeave={handleMouseLeave}
     >
       <div className={styles.imageWrapper}>
-        <img src={image} alt={title} className={styles.image} />
+        <img src={img} alt={title} className={styles.image} />
       </div>
       <div className={styles.content}>
         <TextComponent text={title} className={styles.title} />
-        <TextComponent text={description} className={styles.description} />
+        <TextComponent text={category} className={styles.description} />
         <div className={styles.buttons}>
+          {androidLink && (
+            <div onClick={() => openInNewTab(androidLink)}>
+              <FaAndroid  className={styles.svg} />
+              <TextComponent style={{ marginLeft: 5 }} text="Playstore" className={styles.buttonText} />
+
+              {/* <span style={{ marginLeft: 5 }}> Playstore</span> */}
+            </div>
+          )}
+          {iosLink && (
+            <div onClick={() => openInNewTab(iosLink)}>
+              <FaApple  className={styles.svg} />
+              <TextComponent style={{ marginLeft: 5 }} text="Appstore" className={styles.buttonText} />
+
+              {/* <span style={{ marginLeft: 5 }}> Appstore</span> */}
+            </div>
+          )}
+          {webLink && (
+            <div onClick={() => openInNewTab(webLink)}>
+              <FaExternalLinkAlt  className={styles.svg} />
+              <TextComponent style={{ marginLeft: 5 }} text="Web URL" className={styles.buttonText} />
+
+              {/* <span style={{ marginLeft: 5 }}> </span> */}
+            </div>
+          )}
+        </div>
+        {/* <div className={styles.buttons}>
           <a href={demoLink} target="_blank" rel="noreferrer">
             <TextComponent text="Live Demo" className={styles.buttonText} />
           </a>
           <a href={githubLink} target="_blank" rel="noreferrer">
             <TextComponent text="GitHub" className={styles.buttonText} />
           </a>
-        </div>
+        </div> */}
       </div>
     </div>
   );

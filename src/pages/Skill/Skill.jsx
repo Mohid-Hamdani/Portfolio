@@ -2,22 +2,42 @@ import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { TextComponent } from "../../components";
 import styles from "./Skill.module.css";
-
+import reactjsIcon from "../../assets/images/reactjs.jpeg";
+import reactSVG from "../../assets/images/reactjs.svg";
+import js from "../../assets/images/js.svg";
+import reduxSVG from "../../assets/images/redux.svg";
+import tlwSVG from "../../assets/images/tailwind.svg";
+import gitSVG from "../../assets/images/git.svg";
+import githubSVG from "../../assets/images/github.svg";
+import nextjsSVG from "../../assets/images/nextjs.svg";
+import tsSVG from "../../assets/images/typescript.svg";
+import htmlSVG from "../../assets/images/html.svg";
+import cssSVG from "../../assets/images/css.svg";
+import axSVG from "../../assets/images/Azios.svg";
+import postSVG from "../../assets/images/Postman.svg";
+import antdSVG from "../../assets/images/Antd.svg";
 const Skill = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   const skills = [
-    { name: "React", icon: "⚛️", color: "#61DAFB", level: 80 },
-    { name: "React Native", icon: "📱", color: "#61DAFB", level: 70 },
-    { name: "JavaScript", icon: "🟨", color: "#F7DF1E", level: 60 },
-    { name: "Redux", icon: "🔮", color: "#764ABC", level: 90 },
+    { name: "React", icon: reactSVG, color: "#61DAFB", level: 80 },
+    { name: "React Native", icon: reactSVG, color: "#61DAFB", level: 70 },
+    { name: "JavaScript", icon: js, color: "#F7DF1E", level: 60 },
+    { name: "Redux", icon: reduxSVG, color: "#764ABC", level: 90 },
     // { name: "Node.js", icon: "🟢", color: "#339933", level: 85 },
-    { name: "Tailwind", icon: "💨", color: "#06B6D4", level: 70 },
-    { name: "Git", icon: "📦", color: "#F05032", level: 80 },
-    { name: "Next.js", icon: "▲", color: "#000000", level: 50 },
-    { name: "TypeScript", icon: "🔷", color: "#3178C6", level: 30 },
+    { name: "Tailwind", icon: tlwSVG, color: "#06B6D4", level: 70 },
+    { name: "Next.js", icon: nextjsSVG, color: "#000000", level: 50 },
+    { name: "TypeScript", icon: tsSVG, color: "#3178C6", level: 30 },
+    { name: "CSS", icon: cssSVG, color: "#1572B6", level: 90 },
+    { name: "Html", icon: htmlSVG, color: "#E44D26", level: 95 },
+    { name: "Axios", icon: axSVG, color: "#5A29E4", level: 90 },
 
+    { name: "Postman", icon: postSVG, color: "#F37036", level: 80 },
+    { name: "Ant Design", icon: antdSVG, color: "#F74B5C", level: 80 },
+    { name: "Git", icon: gitSVG, color: "#EE513B", level: 80 },
+
+    { name: "Github", icon: githubSVG, color: "#000000", level: 80 },
   ];
 
   const containerVariants = {
@@ -45,7 +65,10 @@ const Skill = () => {
 
   return (
     <div className={styles.mainCont} id="skills" ref={ref}>
-      <TextComponent text={"Skills & Technologies"} className={styles.heading} />
+      <TextComponent
+        text={"Skills & Technologies"}
+        className={styles.heading}
+      />
 
       <motion.div
         className={styles.skillsGrid}
@@ -78,7 +101,11 @@ const Skill = () => {
                 ease: "linear",
               }}
             >
-              {skill.icon}
+              <img
+                src={skill.icon}
+                alt={skill.name || "skill-icon"}
+                className={styles.iconImage}
+              />
             </motion.div>
             <TextComponent text={skill.name} className={styles.skillName} />
             <div className={styles.skillBar}>

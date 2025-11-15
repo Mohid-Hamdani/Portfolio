@@ -45,13 +45,13 @@ const Navbar = () => {
     <>
       <div className={styles.mainCont}>
         <span className={styles.navDiv}>
-          <div className={styles.logo}>
+          {/* <div className={styles.logo}>
               <img src={deskLogo}/>
-          </div>
-          {/* <TextComponent
+          </div> */}
+          <TextComponent
             text={"<Mohid Hamdani/>"}
-            style={{ color: "var(--navText-color)" }}
-          /> */}
+            style={{ color: "var(--text-color)" }}
+          />
           <div className={styles.desktopNav}>
             {navItems.map((item) => (
               <a
@@ -75,13 +75,16 @@ const Navbar = () => {
           <div className={styles.themeToggle}>
             {theme === "dark" ? (
               <LuCloudSun
-                style={{ color: "var(--text-color)", cursor: "pointer" }}
+              color="var(--text-color)"
+
+                style={{ cursor: "pointer" }}
                 size={20}
                 onClick={() => {setTheme("light"); setIsSidebarOpen(false)}}
               />
             ) : (
               <IoMoonOutline
-                style={{ color: "var(--text-color)", cursor: "pointer" }}
+              color="var(--text-color)"
+                style={{cursor: "pointer" }}
                 size={20}
                 onClick={() => {setTheme("dark"); setIsSidebarOpen(false);}}
               />
@@ -103,23 +106,23 @@ const Navbar = () => {
         }`}
       >
         <div className={styles.sidebarHeader}>
-          <TextComponent
+          {/* <TextComponent
             text={"<Mohid Hamdani/>"}
             style={{ color: "var(--text-color)" }}
-          />
-            <div className={styles.logo}>
+          /> */}
+            {/* <div className={styles.logo}>
               <img src={mobLogo}/>
-          </div>
+          </div> */}
           <div className={styles.sidebarFooter}>
             {theme === "dark" ? (
               <LuCloudSun
-                style={{ color: "var(--navText-color)", cursor: "pointer" }}
+                style={{ color: "var(--text-color)", cursor: "pointer" }}
                 size={20}
                 onClick={() => setTheme("light")}
               />
             ) : (
               <IoMoonOutline
-                style={{ color: "var(--navText-color)", cursor: "pointer" }}
+                style={{ color: "var(--text-color)", cursor: "pointer" }}
                 size={20}
                 onClick={() => setTheme("dark")}
               />
